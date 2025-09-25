@@ -8,18 +8,11 @@ HOST = "127.0.0.1"
 PORT = 8080
 NAME = "SERVER"
 
-MAX_LINE = 64 * 1024  # sane limits for request line / header line length
+MAX_LINE = 64 * 1024
 MAX_HEADERS = 100
 
-# -----------------------------------------------------------------------------
-# Data storage (in-memory for the assignment)
-# -----------------------------------------------------------------------------
 GRADES: dict[str, list[str]] = {}  # subject -> list of grades
 
-
-# -----------------------------------------------------------------------------
-# Model objects like in the guide
-# -----------------------------------------------------------------------------
 class HTTPError(Exception):
     def __init__(self, status: int, reason: str, body: str | None = None):
         super().__init__(reason)
@@ -67,11 +60,7 @@ class Response:
         self.body = body
 
 
-# -----------------------------------------------------------------------------
-# The server class (structured per the iximiuz article)
-# -----------------------------------------------------------------------------
 class MyHTTPServer:
-    # Параметры сервера
     def __init__(self, host: str, port: int, server_name: str):
         self._host = host
         self._port = port
@@ -106,13 +95,15 @@ class MyHTTPServer:
 
     def serve_client(self, conn: socket.socket, addr):
         # 2. Обработка клиентского подключения
-        req = self.parse_request(conn)                      # request line + headers
-        resp = self.handle_request(req)                     # route to a handler
-        self.send_response(conn, resp)                      # status line + headers + body
+        req = self.parse_request(conn)
+        resp = self.handle_request(req)
+        self.send_response(conn, resp)
 
     def parse_request(self, conn: socket.socket) -> Request:
         # 3. Разбор request line (метод + url + версия) и подготовка rfile
-        rfile = conn.makefile("rb")                         # file-like to use .readline()
+
+        # file-like
+        rfile = conn.makefile("rb")
         req_line = rfile.readline(MAX_LINE + 1)
         if len(req_line) > MAX_LINE:
             raise HTTPError(414, "Request-URI Too Long")
@@ -134,10 +125,8 @@ class MyHTTPServer:
             raise HTTPError(505, "HTTP Version Not Supported")
 
         req = Request(method, target, version, rfile)
-        # 4. Parse headers block after the request line
         req.headers = self.parse_headers(rfile)
 
-        # Minimal HTTP/1.1 requirement
         if "host" not in req.headers:
             raise HTTPError(400, "Bad Request", "Host header is missing")
 
@@ -151,14 +140,12 @@ class MyHTTPServer:
             if len(line) > MAX_LINE:
                 raise HTTPError(494, "Request header too large")
             if line in (b"\r\n", b"\n", b""):
-                # end of headers
                 break
             try:
                 line_str = line.decode("iso-8859-1").rstrip("\r\n")
             except UnicodeDecodeError:
                 raise HTTPError(400, "Bad Request", "Invalid header encoding")
             if ":" not in line_str:
-                # forgiving: ignore malformed header line
                 continue
             name, value = line_str.split(":", 1)
             headers[name.strip().lower()] = value.strip()
@@ -183,9 +170,8 @@ class MyHTTPServer:
             )
 
         if req.method == "POST" and req.path == "/submit":
-            # accept both URL query and body parameters; prefer body
             params: dict[str, list[str]] = {}
-            # parse body if present and is form-encoded
+
             ctype = req.headers.get("content-type", "")
             body = req.body() or b""
             if ctype.split(";", 1)[0].strip().lower() == "application/x-www-form-urlencoded":
@@ -219,7 +205,6 @@ class MyHTTPServer:
                 body=b"",
             )
 
-        # If not matched:
         raise HTTPError(404, "Not Found")
 
     def send_response(self, conn: socket.socket, resp: Response):
@@ -258,7 +243,6 @@ class MyHTTPServer:
         except Exception:
             pass
 
-    # ---- helpers to render the HTML page ----
     def render_index_html(self) -> str:
         if not GRADES:
             rows = "<tr><td colspan='2' style='color:#777'>no records yet</td></tr>"
