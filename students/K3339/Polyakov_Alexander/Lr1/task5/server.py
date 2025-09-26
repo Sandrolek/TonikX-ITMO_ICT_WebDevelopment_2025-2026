@@ -175,10 +175,10 @@ class MyHTTPServer:
             ctype = req.headers.get("content-type", "")
             body = req.body() or b""
             if ctype.split(";", 1)[0].strip().lower() == "application/x-www-form-urlencoded":
-                # cp1251 browsers can happen; but we’ll assume utf-8 for this task
+
                 form = parse_qs(body.decode("utf-8", errors="replace"), keep_blank_values=True)
                 params.update(form)
-            # also merge query string as a fallback
+
             for k, v in req.query.items():
                 params.setdefault(k, []).extend(v)
 
