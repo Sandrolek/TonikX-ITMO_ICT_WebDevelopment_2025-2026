@@ -1,6 +1,6 @@
 
 <!doctype html>
-<html lang="ru" class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -10,15 +10,13 @@
       
       
       
-        <link rel="next" href="setup/">
-      
       
       <link rel="icon" href="assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.23">
     
     
       
-        <title>Лабораторная работа 2 - Django веб-приложение</title>
+        <title>Lr4 Frontend</title>
       
     
     
@@ -60,8 +58,8 @@
     <div data-md-component="skip">
       
         
-        <a href="#2-django-" class="md-skip">
-          Перейти к содержанию
+        <a href="#no4-vuejs" class="md-skip">
+          Skip to content
         </a>
       
     </div>
@@ -72,9 +70,11 @@
     
       
 
-<header class="md-header" data-md-component="header">
-  <nav class="md-header__inner md-grid" aria-label="Верхний колонтитул">
-    <a href="." title="Лабораторная работа 2 - Django веб-приложение" class="md-header__button md-logo" aria-label="Лабораторная работа 2 - Django веб-приложение" data-md-component="logo">
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="." title="Lr4 Frontend" class="md-header__button md-logo" aria-label="Lr4 Frontend" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -88,13 +88,13 @@
       <div class="md-header__ellipsis">
         <div class="md-header__topic">
           <span class="md-ellipsis">
-            Лабораторная работа 2 - Django веб-приложение
+            Lr4 Frontend
           </span>
         </div>
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Главная
+              Документация
             
           </span>
         </div>
@@ -116,21 +116,16 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Поиск" placeholder="Поиск" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
       <label class="md-search__icon md-icon" for="__search">
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
         
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
       </label>
-      <nav class="md-search__options" aria-label="Поиск">
+      <nav class="md-search__options" aria-label="Search">
         
-          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Поделиться" aria-label="Поделиться" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
-            
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
-          </a>
-        
-        <button type="reset" class="md-search__icon md-icon" title="Очистить" aria-label="Очистить" tabindex="-1">
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
           
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
         </button>
@@ -141,7 +136,7 @@
       <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
         <div class="md-search-result" data-md-component="search-result">
           <div class="md-search-result__meta">
-            Инициализация поиска
+            Initializing search
           </div>
           <ol class="md-search-result__list" role="presentation"></ol>
         </div>
@@ -161,131 +156,6 @@
       
         
           
-            
-<nav class="md-tabs" aria-label="Вкладки" data-md-component="tabs">
-  <div class="md-grid">
-    <ul class="md-tabs__list">
-      
-        
-  
-  
-  
-    
-  
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
-        
-  
-  
-    
-  
-  Главная
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="setup/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Установка и настройка
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="models/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Модели данных
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="views/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Представления и URL
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="forms/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Формы
-
-      </a>
-    </li>
-  
-
-      
-        
-  
-  
-  
-  
-    <li class="md-tabs__item">
-      <a href="templates/" class="md-tabs__link">
-        
-  
-  
-    
-  
-  Шаблоны
-
-      </a>
-    </li>
-  
-
-      
-    </ul>
-  </div>
-</nav>
-          
         
       
       <main class="md-main" data-md-component="main">
@@ -299,18 +169,16 @@
                     
 
 
-  
 
-
-<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Навигация" data-md-level="0">
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Лабораторная работа 2 - Django веб-приложение" class="md-nav__button md-logo" aria-label="Лабораторная работа 2 - Django веб-приложение" data-md-component="logo">
+    <a href="." title="Lr4 Frontend" class="md-nav__button md-logo" aria-label="Lr4 Frontend" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
 
     </a>
-    Лабораторная работа 2 - Django веб-приложение
+    Lr4 Frontend
   </label>
   
   <ul class="md-nav__list" data-md-scrollfix>
@@ -336,7 +204,7 @@
   
   
   <span class="md-ellipsis">
-    Главная
+    Документация
     
   </span>
   
@@ -349,7 +217,7 @@
   
   
   <span class="md-ellipsis">
-    Главная
+    Документация
     
   </span>
   
@@ -358,7 +226,7 @@
       
         
 
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -367,7 +235,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Содержание
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -383,7 +251,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Описание проекта
+      Технологии
     </span>
   </a>
   
@@ -392,67 +260,34 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Основная функциональность
+      Запуск проекта
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Основная функциональность">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Для пользователей:
+      Реализация интерфейса
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      API и данные
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Для администраторов:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      Используемые технологии
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      Архитектура проекта
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ключевые особенности реализации
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Результаты
+      Скриншоты
     </span>
   </a>
   
@@ -462,116 +297,6 @@
   
 </nav>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="setup/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Установка и настройка
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="models/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Модели данных
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="views/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Представления и URL
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="forms/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Формы
-    
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="templates/" class="md-nav__link">
-        
-  
-  
-  <span class="md-ellipsis">
-    Шаблоны
-    
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -589,7 +314,7 @@
                   <div class="md-sidebar__inner">
                     
 
-<nav class="md-nav md-nav--secondary" aria-label="Содержание">
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
   
@@ -598,7 +323,7 @@
   
     <label class="md-nav__title" for="__toc">
       <span class="md-nav__icon md-icon"></span>
-      Содержание
+      Table of contents
     </label>
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
@@ -614,7 +339,7 @@
         <li class="md-nav__item">
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      Описание проекта
+      Технологии
     </span>
   </a>
   
@@ -623,67 +348,34 @@
         <li class="md-nav__item">
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
-      Основная функциональность
+      Запуск проекта
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Основная функциональность">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
     <span class="md-ellipsis">
-      Для пользователей:
+      Реализация интерфейса
     </span>
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
+  <a href="#api" class="md-nav__link">
+    <span class="md-ellipsis">
+      API и данные
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
-      Для администраторов:
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
-    <span class="md-ellipsis">
-      Используемые технологии
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
-    <span class="md-ellipsis">
-      Архитектура проекта
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_8" class="md-nav__link">
-    <span class="md-ellipsis">
-      Ключевые особенности реализации
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_9" class="md-nav__link">
-    <span class="md-ellipsis">
-      Результаты
+      Скриншоты
     </span>
   </a>
   
@@ -705,66 +397,67 @@
 
 
 
-<h1 id="2-django-">Отчет по лабораторной работе 2 - Django веб-приложение</h1>
+<h1 id="no4-vuejs">Лабораторная работа №4 — Клиентская часть (Vue.js)</h1>
 <h2 id="_1">Цель работы</h2>
-<p>Разработка полнофункционального веб-приложения для туристического агентства с использованием фреймворка Django. Изучение принципов работы с моделями данных, представлениями, формами и шаблонами в Django.</p>
-<h2 id="_2">Описание проекта</h2>
-<p>Веб-приложение для туристического агентства, позволяющее пользователям просматривать туры, делать резервирования и оставлять отзывы. Администраторы могут управлять турами и подтверждать резервирования.</p>
-<h2 id="_3">Основная функциональность</h2>
-<h3 id="_4">Для пользователей:</h3>
+<p>Разработать SPA на Vue 3 для управления торговыми каталогами, партиями и отчётами, подключив его к API из предыдущей лабораторной работы.</p>
+<h2 id="_2">Технологии</h2>
 <ul>
-<li>Регистрация и авторизация</li>
-<li>Просмотр списка туров с поиском и пагинацией</li>
-<li>Детальная информация о турах</li>
-<li>Создание резервирований</li>
-<li>Редактирование и удаление своих резервирований</li>
-<li>Добавление отзывов с рейтингом (1-10)</li>
+<li>Vue.js 3 (Composition API) + TypeScript — основной фреймворк.</li>
+<li>Vuetify 3 — UI (Material Design), @mdi/font + Roboto.</li>
+<li>Pinia — состояние и хранение токена с инициализацией при старте.</li>
+<li>Vue Router — маршруты с гардом авторизации и проверкой <code>requiresAdmin</code>.</li>
+<li>Axios — HTTP-клиент, токен кладётся в <code>Authorization: Token &lt;token&gt;</code>, на 401 вызывается обработчик выхода.</li>
+<li>Vite — сборка и dev-сервер.</li>
 </ul>
-<h3 id="_5">Для администраторов:</h3>
+<h2 id="_3">Запуск проекта</h2>
 <ul>
-<li>Управление турами через админ-панель Django</li>
-<li>Просмотр всех резервирований</li>
-<li>Подтверждение и отмена резервирований</li>
-<li>Просмотр статистики по проданным турам по странам</li>
+<li>Бэкенд: должен быть доступен по <code>VITE_API_BASE_URL</code> (по умолчанию <code>http://127.0.0.1:8000/</code>), CORS включён.</li>
+<li>Фронтенд: <code>npm install</code>, затем <code>npm run dev</code> (http://localhost:5173/).</li>
 </ul>
-<h2 id="_6">Используемые технологии</h2>
-<ul>
-<li><strong>Django 5.2.7</strong> - веб-фреймворк</li>
-<li><strong>PostgreSQL</strong> - база данных</li>
-<li><strong>Bootstrap 5</strong> - CSS фреймворк для UI</li>
-<li><strong>Font Awesome</strong> - иконки</li>
-<li><strong>Docker Compose</strong> - для запуска PostgreSQL</li>
-</ul>
-<h2 id="_7">Архитектура проекта</h2>
-<p>Проект организован по стандартной структуре Django:</p>
-<pre><code>Lr2/
-├── Lr2/              # Основные настройки проекта
-│   ├── settings.py   # Конфигурация приложения
-│   ├── urls.py       # Главный URL роутер
-│   └── ...
-├── tourism/          # Основное приложение
-│   ├── models.py     # Модели данных
-│   ├── views.py      # Представления (контроллеры)
-│   ├── urls.py       # URL маршруты приложения
-│   ├── forms.py      # Формы
-│   ├── admin.py      # Настройки админ-панели
-│   └── ...
-├── templates/        # HTML шаблоны
-│   └── tourism/
-├── static/           # Статические файлы (CSS, JS, изображения)
-└── manage.py         # Скрипт управления Django
-</code></pre>
-<h2 id="_8">Ключевые особенности реализации</h2>
+<h2 id="_4">Реализация интерфейса</h2>
 <ol>
-<li><strong>Модели данных</strong>: Tour, Reservation, Review с связями ForeignKey</li>
-<li><strong>Пагинация</strong>: Использование Django Paginator для списков</li>
-<li><strong>Поиск</strong>: Фильтрация по названию, стране и агентству</li>
-<li><strong>Валидация</strong>: Проверка доступности мест при бронировании</li>
-<li><strong>Авторизация</strong>: Использование декораторов Django для защиты маршрутов</li>
-<li><strong>Статусы резервирований</strong>: pending, confirmed, cancelled</li>
+<li>
+<p>Авторизация и регистрация (<code>/login</code>, <code>/register</code>): формы входа/регистрации, токен сохраняется в Pinia, при отсутствии токена приватные маршруты редиректят на логин, admin-страницы недоступны не-админам.</p>
+</li>
+<li>
+<p>Дашборд (<code>/</code>): стартовый экран после входа.</p>
+</li>
+<li>
+<p>Каталоги (admin): <code>/catalog/manufacturers</code>, <code>/products</code>, <code>/broker-companies</code>, <code>/brokers</code> — таблицы Vuetify с CRUD-формами и удалением через диалоги.</p>
+</li>
+<li>
+<p>Торговля: <code>/trading/batches</code>, <code>/batch-items</code> — список партий и позиций, диалоги создания/редактирования, удаление с подтверждением. Для обычного брокера поле брокера фиксируется на его ID; админ выбирает брокера из списка.</p>
+</li>
+<li>
+<p>Отчёты: </p>
+</li>
+<li><code>product-quantities</code> — остатки на дату,</li>
+<li><code>top-manufacturer</code> — лучший производитель за период,</li>
+<li><code>unsold-products</code> — непроданные по компании,</li>
+<li><code>expired-items</code> — просроченные позиции,</li>
+<li><code>broker-salaries</code> — зарплаты брокеров (фильтры по компании/датам),</li>
+<li>
+<p><code>latest-trades</code> — последние сделки и итоги.</p>
+</li>
+<li>
+<p>Профиль (<code>/profile</code>): данные пользователя, просмотр/редактирование.</p>
+</li>
 </ol>
-<h2 id="_9">Результаты</h2>
-<p>Успешно реализовано полнофункциональное Django веб-приложение с регистрацией пользователей, системой резервирований, отзывами и административной панелью. Изучены основные концепции Django: ORM, представления на основе функций, формы, шаблоны и система аутентификации.</p>
+<h2 id="api">API и данные</h2>
+<p><code>src/api/http.ts</code> — базовый Axios-клиент; подставляет токен, ловит 401 для выхода. <code>baseURL</code> берётся из <code>VITE_API_BASE_URL</code>.</p>
+<p><code>src/api/trading.ts</code> — вызовы для каталогов, партий и отчётов: CRUD для manufacturers/products/broker-companies/brokers/batches/batch-items; отчёты (product-quantities, top-manufacturer, unsold-products, expired-items, broker-salaries, latest-trades).</p>
+<h2 id="_5">Скриншоты</h2>
+<p><img alt="Dashboard" src="images/dashboard.png" />
+<img alt="Profile" src="images/profile.png" />
+<img alt="Manufacturers" src="images/manufacturers.png" />
+<img alt="Products" src="images/products.png" />
+<img alt="Broker Companies" src="images/broker_companies.png" />
+<img alt="Brokers" src="images/brokers.png" />
+<img alt="Batches" src="images/batches.png" />
+<img alt="Batch Items" src="images/batch_items.png" />
+<img alt="Product Quantities" src="images/product_quantities.png" />
+<img alt="Expired Items" src="images/expired_items.png" />
+<img alt="Latest Trades" src="images/latest_trades.png" /></p>
 
 
 
@@ -784,12 +477,6 @@
           
 <script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
         </div>
-        
-          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
-  
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
-  К началу
-</button>
         
       </main>
       
@@ -819,7 +506,7 @@
     
     
       
-      <script id="__config" type="application/json">{"base": ".", "features": ["navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.share"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "\u0421\u043a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u043d\u043e \u0432 \u0431\u0443\u0444\u0435\u0440", "clipboard.copy": "\u041a\u043e\u043f\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0432 \u0431\u0443\u0444\u0435\u0440", "search.result.more.one": "\u0415\u0449\u0451 1 \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.more.other": "\u0415\u0449\u0451 # \u043d\u0430 \u044d\u0442\u043e\u0439 \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435", "search.result.none": "\u0421\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439 \u043d\u0435 \u043d\u0430\u0439\u0434\u0435\u043d\u043e", "search.result.one": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e 1 \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0435", "search.result.other": "\u041d\u0430\u0439\u0434\u0435\u043d\u043e \u0441\u043e\u0432\u043f\u0430\u0434\u0435\u043d\u0438\u0439: #", "search.result.placeholder": "\u041d\u0430\u0447\u043d\u0438\u0442\u0435 \u043f\u0435\u0447\u0430\u0442\u0430\u0442\u044c \u0434\u043b\u044f \u043f\u043e\u0438\u0441\u043a\u0430", "search.result.term.missing": "\u041e\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442", "select.version": "\u0412\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u0432\u0435\u0440\u0441\u0438\u044e"}, "version": null}</script>
+      <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
       <script src="assets/javascripts/bundle.f55a23d4.min.js"></script>
