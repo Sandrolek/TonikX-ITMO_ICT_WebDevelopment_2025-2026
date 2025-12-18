@@ -1,6 +1,7 @@
 import datetime
 from decimal import Decimal
 
+from django.contrib.auth import get_user_model
 from django.core.management.base import BaseCommand
 
 from trading.models import (
@@ -60,16 +61,33 @@ class Command(BaseCommand):
             name="Trust Brokers", defaults={"monthly_fee": Decimal("400.00")}
         )
 
+        # Users for brokers
+        User = get_user_model()
+        user_a, _ = User.objects.get_or_create(username="broker_a", defaults={"email": "broker_a@example.com"})
+        user_b, _ = User.objects.get_or_create(username="broker_b", defaults={"email": "broker_b@example.com"})
+        user_a.set_password("P@ssw0rd")
+        user_b.set_password("P@ssw0rd")
+        user_a.save()
+        user_b.save()
+
         # Brokers
         broker_a, _ = Broker.objects.get_or_create(
-            company=prime, defaults={"commission_rate": Decimal("0.10")}
+            company=prime, defaults={"commission_rate": Decimal("0.10"), "user": user_a}
         )
         broker_b, _ = Broker.objects.get_or_create(
-            company=prime, defaults={"commission_rate": Decimal("0.10")}
+            company=prime, defaults={"commission_rate": Decimal("0.10"), "user": user_b}
         )
         broker_c, _ = Broker.objects.get_or_create(
             company=trust, defaults={"commission_rate": Decimal("0.10")}
         )
+
+        # Ensure user assignment in case brokers already existed
+        if not broker_a.user_id:
+            broker_a.user = user_a
+            broker_a.save(update_fields=["user"])
+        if not broker_b.user_id:
+            broker_b.user = user_b
+            broker_b.save(update_fields=["user"])
 
         # Batches
         batch1, _ = Batch.objects.get_or_create(

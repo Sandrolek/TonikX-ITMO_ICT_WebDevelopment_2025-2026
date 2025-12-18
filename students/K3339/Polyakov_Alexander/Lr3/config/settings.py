@@ -9,6 +9,7 @@ DEBUG = True
 ALLOWED_HOSTS: list[str] = []
 
 INSTALLED_APPS = [
+    "corsheaders",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -23,6 +24,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -83,9 +85,14 @@ REST_FRAMEWORK = {
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
 }
 
+CORS_ALLOW_ALL_ORIGINS = True
+
 DJOSER = {
     "LOGIN_FIELD": "username",
-    "SERIALIZERS": {},
+    "SERIALIZERS": {
+        "user": "trading.serializers_user.UserSerializer",
+        "current_user": "trading.serializers_user.UserSerializer",
+    },
 }
 
 SPECTACULAR_SETTINGS = {
